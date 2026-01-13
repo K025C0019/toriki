@@ -1,35 +1,98 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>toriki</title>
-        <meta name="description" content="百名点に選ばれた鶏肉を提供するお店">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鳥樹 - Toriki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        <!--リセットCSS-->
-            <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <header class="site-header">
+        <h1>鳥樹</h1>
+    </header>
 
-        <!--Googleフォント-->
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <section class="hero-section">
+        <div class="image-placeholder hero-img">
+            <p>鳥樹の画像</p>
+        </div>
+    </section>
 
-        <!--オリジナルcss-->
-            <link rel="stylesheet" href="css/toriki.css">
-    </head>
+    <section class="intro-section container">
+        <h2>お店の紹介</h2>
+        <p class="text-content">
+            ここに紹介文が入ります。<br>
+            こだわりの焼き鳥と落ち着いた空間をご提供します。<br>
+            テキストテキストテキスト。
+        </p>
+    </section>
 
-    <body>
-        <header class="page-header">
-            <h1 class="align-center">
-                <a href="toriki.html"><img class="logo" src="images/mise.jpg" alt="鳥樹"></a>
-            </h1>
-            <nav>
-                <ul class="main-nav font-english">
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </nav>
-        </header>
-        <h2 classl="page-title font-english">新鮮な鶏肉をご提供 </h2>
-    </body>
+    <hr class="divider">
+
+    <section class="menu-section container">
+        <div class="menu-button-area">
+            <a href="#menu" class="menu-btn">ＭＥＮＵボタン</a>
+        </div>
+
+        <h3 class="section-title">人気メニュー</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="image-placeholder rect-img"><p>料理画像</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="image-placeholder rect-img"><p>料理画像</p></div>
+            </div>
+        </div>
+
+        <h3 class="section-title">その他メニュー</h3>
+        
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="image-placeholder square-img"><p>料理画像</p></div>
+                <p class="menu-details">名前、値段</p>
+            </div>
+            <div class="menu-item">
+                <div class="image-placeholder square-img"><p>料理画像</p></div>
+                <p class="menu-details">名前、値段</p>
+            </div>
+            
+            <div class="menu-item">
+                <div class="image-placeholder square-img"><p>料理画像</p></div>
+                <p class="menu-details">名前、値段</p>
+            </div>
+            <div class="menu-item">
+                <div class="image-placeholder square-img"><p>料理画像</p></div>
+                <p class="menu-details">名前、値段</p>
+            </div>
+        </div>
+
+        <div class="menu-single-item">
+            <div class="image-placeholder square-img"><p>料理画像</p></div>
+            <p class="menu-details">名前、値段</p>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <section class="shop-info-section container">
+        <h2 class="section-title">お店情報</h2>
+        <div class="info-box">
+            <p>住所：東京都大田区蒲田5丁目18-11</p>
+            <p>電話番号：03-3739-3955</p>
+            <p>営業時間：17:00 ~ 23:00</p>
+            <p>定休日：日、祝日</p>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="image-placeholder map-img">
+            <p>マップ https://www.google.com/maps/search/%E9%B3%A5%E6%A8%B9/</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>フッター情報 (Copyright, SNSリンクなど)</p>
+    </footer>
+
+</body>
 </html>
