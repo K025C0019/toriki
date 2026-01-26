@@ -7,22 +7,27 @@
     padding: 0;
 }
 
+html {
+    /* ★これを追加すると、ボタンを押した時に「スルッ」と移動します */
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     color: #333;
     line-height: 1.6;
-    background-color: #f9f9f9; /* 背景色：薄いグレー */
+    background-color: #f9f9f9;
 }
 
 /* 共通レイアウト設定 */
 .container {
-    max-width: 800px; /* PCで見ても広がりすぎないように制限 */
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
 }
 
-/* 画像プレースホルダー（画像の代わり） */
+/* 画像プレースホルダー */
 .image-placeholder {
     background-color: #ccc;
     display: flex;
@@ -35,7 +40,7 @@ body {
 
 /* ヘッダー */
 .site-header {
-    background-color: #222; /* 黒っぽい色 */
+    background-color: #222;
     color: #fff;
     padding: 15px;
     text-align: center;
@@ -48,13 +53,15 @@ body {
 
 /* メインビジュアル */
 .hero-img {
-    height: 300px; /* 画像の高さ */
+    height: 300px;
     background-color: #999;
 }
 
 /* セクション共通 */
 section {
     margin-bottom: 40px;
+    /* ★ページ内リンクで飛んだ時、ヘッダーに隠れないように余白調整（任意） */
+    scroll-margin-top: 20px; 
 }
 
 h2, h3.section-title {
@@ -64,7 +71,7 @@ h2, h3.section-title {
     padding-bottom: 5px;
 }
 
-/* 区切り線（Excelのフッター情報の区切りを再現） */
+/* 区切り線 */
 .divider {
     border: 0;
     height: 1px;
@@ -80,7 +87,7 @@ h2, h3.section-title {
 
 .menu-btn {
     display: inline-block;
-    background-color: #b33e3e; /* 赤系（焼き鳥イメージ） */
+    background-color: #b33e3e;
     color: #fff;
     padding: 15px 40px;
     text-decoration: none;
@@ -88,13 +95,18 @@ h2, h3.section-title {
     border-radius: 5px;
     font-size: 1.2rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
 }
 
-/* メニューグリッド（2列配置） */
+.menu-btn:hover {
+    background-color: #903030; /* ホバー時の色変化 */
+}
+
+/* メニューグリッド */
 .menu-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 1:1の2列 */
-    gap: 15px; /* アイテム間の隙間 */
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
     margin-bottom: 30px;
 }
 
@@ -104,7 +116,7 @@ h2, h3.section-title {
 }
 
 .square-img {
-    aspect-ratio: 1 / 1; /* 正方形にする */
+    aspect-ratio: 1 / 1;
     border-radius: 8px;
     margin-bottom: 5px;
 }
@@ -116,8 +128,8 @@ h2, h3.section-title {
 
 /* 中央配置の単独メニュー */
 .menu-single-item {
-    max-width: 50%; /* 親の半分くらいの幅 */
-    margin: 0 auto; /* 中央寄せ */
+    max-width: 50%;
+    margin: 0 auto;
 }
 
 /* お店情報 */
@@ -125,10 +137,14 @@ h2, h3.section-title {
     margin-bottom: 10px;
 }
 
-/* マップ */
-.map-img {
-    height: 250px;
+/* マップエリア */
+.map-section {
+    width: 100%;
     background-color: #e0e0e0;
+}
+/* iframeの余白などを消す */
+.map-section iframe {
+    display: block; 
 }
 
 /* フッター */
