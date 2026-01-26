@@ -1,53 +1,141 @@
 @charset "UTF-8";
 
-html {
-    font-size: 100%;
+/* 基本リセット */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-body{
-    font-family: "Hiragino kaku Gothic ProN","Hiragino Sans","BIZ UDPGothic",sans-serif;
-    line-height: 1.7;
-    color: #432;
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9; /* 背景色：薄いグレー */
 }
-a{
-    text-decoration: none;
-}
-img {
-    max-width: 100%;
-}
-/*レイアウト*/
-.align-center {
+
+/* 共通レイアウト設定 */
+.container {
+    max-width: 800px; /* PCで見ても広がりすぎないように制限 */
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
 }
 
-/*見出し*/
-.font-english {
-    font-family: 'philosopher', sans-serif;
-    font-weight: normal;
-}
-.page-title {
-    font-size: 3rem;
-    text-align: center;
-    margin-top: 2rem;
-    line-height: 1.4;
-}
-/*ヘッダー
-------*/
-.page-header{
-    padding-top: .5rem;
-}
-.logo {
-    width: 210px;
-}
-.main-nav {
+/* 画像プレースホルダー（画像の代わり） */
+.image-placeholder {
+    background-color: #ccc;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 2.5rem;
+    color: #666;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* ヘッダー */
+.site-header {
+    background-color: #222; /* 黒っぽい色 */
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.site-header h1 {
     font-size: 1.5rem;
-    list-style: none;
+    letter-spacing: 0.1em;
 }
-.main-nav a {
-    color: #432;
+
+/* メインビジュアル */
+.hero-img {
+    height: 300px; /* 画像の高さ */
+    background-color: #999;
 }
-.main-nav a:hover {
-    color: #0bd;
+
+/* セクション共通 */
+section {
+    margin-bottom: 40px;
+}
+
+h2, h3.section-title {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* 区切り線（Excelのフッター情報の区切りを再現） */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 40px 0;
+}
+
+/* メニューボタン */
+.menu-button-area {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.menu-btn {
+    display: inline-block;
+    background-color: #b33e3e; /* 赤系（焼き鳥イメージ） */
+    color: #fff;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* メニューグリッド（2列配置） */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 1:1の2列 */
+    gap: 15px; /* アイテム間の隙間 */
+    margin-bottom: 30px;
+}
+
+.rect-img {
+    height: 150px;
+    border-radius: 8px;
+}
+
+.square-img {
+    aspect-ratio: 1 / 1; /* 正方形にする */
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.menu-details {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* 中央配置の単独メニュー */
+.menu-single-item {
+    max-width: 50%; /* 親の半分くらいの幅 */
+    margin: 0 auto; /* 中央寄せ */
+}
+
+/* お店情報 */
+.info-box p {
+    margin-bottom: 10px;
+}
+
+/* マップ */
+.map-img {
+    height: 250px;
+    background-color: #e0e0e0;
+}
+
+/* フッター */
+.site-footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
 }
