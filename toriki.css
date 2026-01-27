@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* 基本リセット */
+/* 基本設定 */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,20 +8,17 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* スムーズスクロール */
 }
 
 body {
-    /* ★フォントを明朝体に変更（これだけで和風になります） */
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "HGS Mincho E", serif;
-    /* 背景色を「和紙」のような少し黄みがかった白に */
-    background-color: #faf7f0;
-    /* 文字色を真っ黒ではなく、濃い墨色（焦げ茶）に */
-    color: #383838;
-    line-height: 1.8; /* 行間を少し広めにとってゆったりさせる */
+    /* 和風フォント（明朝体） */
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "serif";
+    background-color: #faf7f0; /* 生成り色（和紙風） */
+    color: #383838; /* 墨色 */
+    line-height: 1.8;
 }
 
-/* 共通レイアウト設定 */
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -29,86 +26,62 @@ body {
     text-align: center;
 }
 
-/* 画像プレースホルダー */
-.image-placeholder {
-    background-color: #e0ded5; /* グレーも少し暖色寄りに */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #7a7a7a;
-    font-weight: bold;
+/* 画像の基本設定（歪み防止） */
+img {
     width: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* ヘッダー */
 .site-header {
-    background-color: #2b2b2b; /* 濃い墨色 */
+    background-color: #2b2b2b;
     color: #fff;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
-    border-bottom: 4px solid #a33030; /* 朱色のラインをアクセントに */
+    border-bottom: 4px solid #8f2e2e; /* アクセントの赤ライン */
 }
 
 .site-header h1 {
     font-size: 2rem;
-    letter-spacing: 0.3em; /* 文字の間隔を広げる */
+    letter-spacing: 0.4em;
     font-weight: normal;
 }
 
 /* メインビジュアル */
 .hero-img {
-    height: 350px;
-    background-color: #ccc;
-    /* 写真の下に影をつけて浮き上がらせる */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: 400px; /* PC/スマホで見やすい高さに調整 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* セクション共通 */
-section {
-    margin-bottom: 60px; /* 余白を広めに */
-    scroll-margin-top: 20px;
-}
-
-/* 見出しのデザインを「縦書き風」のあしらいや和風ラインに変更 */
+/* セクションタイトル */
 h2, h3.section-title {
     margin-bottom: 30px;
-    border-bottom: 1px solid #a33030; /* 細い赤線 */
-    border-top: 1px solid #a33030;    /* 上下で挟む */
+    border-bottom: 1px solid #8f2e2e;
+    border-top: 1px solid #8f2e2e;
     display: inline-block;
-    padding: 10px 30px;
+    padding: 8px 30px;
     font-size: 1.4rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
 }
 
-/* 区切り線（筆文字のような強弱はCSSでは難しいのでシンプルに） */
-.divider {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, #faf7f0, #ccc, #faf7f0); /* 両端が薄くなる線 */
-    margin: 50px 0;
-}
-
-/* -------------------------------------------------- */
-/* ★ここがポイント：メニューの「見出し」を和風の帯にする */
-/* -------------------------------------------------- */
+/* メニューの帯（見出し） */
 .menu-header {
-    background-color: #8f2e2e; /* 弁柄色（落ち着いた赤） */
+    background-color: #8f2e2e; /* 落ち着いた赤 */
     color: #fff;
-    padding: 15px 0;
-    margin-bottom: 40px;
-    width: 100%;
+    padding: 20px 0;
+    margin: 40px 0;
     text-align: center;
-    /* 和紙のようなザラつきを表現する簡易テクニック（点線枠を重ねるなど） */
     border-top: 2px solid #5e1c1c;
     border-bottom: 2px solid #5e1c1c;
 }
 
 .menu-header h2 {
-    border: none; /* 共通のh2スタイルを打ち消し */
+    border: none;
     margin: 0;
     padding: 0;
     font-size: 1.6rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
 }
 
 /* メニューグリッド */
@@ -120,50 +93,53 @@ h2, h3.section-title {
 }
 
 .rect-img {
-    height: 160px;
-    border-radius: 2px; /* 角丸を小さくしてキリッとさせる */
-    border: 1px solid #d4d1c9; /* 薄い枠線をつける */
+    height: 180px;
+    border: 1px solid #d4d1c9;
 }
 
 .square-img {
     aspect-ratio: 1 / 1;
-    border-radius: 2px;
     border: 1px solid #d4d1c9;
     margin-bottom: 10px;
 }
 
 .menu-details {
-    font-size: 1rem;
-    margin-top: 5px;
-    color: #594e42; /* 少し薄い茶色 */
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #594e42;
 }
 
-/* 中央配置の単独メニュー */
+/* 中央配置のメニュー */
 .menu-single-item {
-    max-width: 50%;
-    margin: 0 auto;
+    max-width: 45%;
+    margin: 0 auto 40px;
 }
 
-/* お店情報エリア */
+/* 区切り線 */
+.divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, #faf7f0, #ccc, #faf7f0);
+    margin: 60px 0;
+}
+
+/* お店情報 */
 .shop-info-section {
-    background-color: #fff; /* 白い紙を置いたように見せる */
-    padding: 40px;
+    background-color: #fff;
+    padding: 40px 20px;
     border: 1px solid #e0ded5;
-    box-shadow: 0 0 15px rgba(0,0,0,0.03); /* 淡い影 */
 }
 
 .info-box p {
     margin-bottom: 15px;
-    border-bottom: 1px dashed #ccc; /* 点線の下線 */
-    padding-bottom: 5px;
-    display: inline-block; /* 文字の長さだけ線を引く */
-    min-width: 200px;
+    border-bottom: 1px dashed #ccc;
+    display: inline-block;
+    min-width: 250px;
 }
 
-/* マップエリア */
-.map-section iframe {
-    display: block;
-    filter: grayscale(20%); /* 地図の色味を少し抑えて馴染ませる（任意） */
+/* マップ */
+.map-section {
+    line-height: 0;
 }
 
 /* フッター */
@@ -171,7 +147,20 @@ h2, h3.section-title {
     background-color: #2b2b2b;
     color: #aaa;
     text-align: center;
-    padding: 30px;
+    padding: 40px;
     font-size: 0.8rem;
-    border-top: 4px solid #a33030;
+    border-top: 4px solid #8f2e2e;
+}
+
+/* スマホ対応：メニューを縦に並べる場合（画面幅が狭い時） */
+@media (max-width: 600px) {
+    .menu-grid {
+        grid-template-columns: 1fr; /* 1列にする */
+    }
+    .menu-single-item {
+        max-width: 100%;
+    }
+    .hero-img {
+        height: 250px;
+    }
 }
